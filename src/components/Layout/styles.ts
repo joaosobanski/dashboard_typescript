@@ -7,5 +7,5 @@ export const Grid = styled.div`
     grid-template-areas: 
     'AS MH'
     'AS CT';
-    height: 100vh; //view height 100% da altura
+    height: 100vh;
 `;

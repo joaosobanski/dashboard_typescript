@@ -35,7 +35,7 @@ export const MenuItemLink = styled.a`
     margin: 5px 0;
     display: flex;
     align-items: center;
-    color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.info};
     text-decoration: none;
     transition: opacity .3s;
 
