@@ -1,14 +1,23 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ContentHeader } from '../../components/ContentHeader';
 import { HistoryFinanceCard } from '../../components/HistoryFinanceCard';
 import { SelectInput } from '../../components/SelectInput';
+import gains from '../../repositories/gains';
+import expenses from '../../repositories/expenses';
 import {
     Container,
     Content,
     Filters
 } from './styles';
 
+interface IData {
+    description: string,
+    amountFormatted: string,
+    frequency: string,
+    dateFormatted: string
+    tagColor: string
+}
 
 export const List: React.FC = () => {
     const { type } = useParams();
@@ -22,6 +31,7 @@ export const List: React.FC = () => {
                 lineColor: '#E44C4E'
             };
     }, [type]);
+ 
 
     const months = [
         {
@@ -66,6 +76,10 @@ export const List: React.FC = () => {
             value: 2022, label: '2022'
         },
     ]
+
+    useEffect(() => {
+        (title.title == "Entradas" ? console.log(gains) : console.log(expenses)); 
+    }, []);
 
     return (
         <Container>
